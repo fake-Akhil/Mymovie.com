@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMovie.com | Your Cinema Destination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MyMovie.com</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#actors">Actors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Experience The Magic of Cinema</h1>
+            <p>Your ultimate destination for blockbuster movies</p>
+            <a href="#movies" class="btn">Explore Movies</a>
+        </div>
+    </section>
+
+    <!-- Movies Page -->
+    <section id="movies" class="page">
+        <div class="container">
+            <h2>Latest Releases</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn2.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcTSKmBD1qX8Yvu8D5T9ugFnBE8NcIO1VZYAPMzCFAy9o2jlTo3b&psig=AOvVaw1XcdlRq1krKh3SGbxVhpTk&ust=1748450374265000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMiYhK6LxI0DFQAAAAAdAAAAABAE" alt="Mission Impossible">
+                    <h3>Mission: Impossible</h3>
+                    <p>Action/Adventure</p>
+                    <button class="btn feedback-btn">Give Feedback</button>
+                </div>
+                <div class="movie-card">
+                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn2.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcRx46SP8e0e7gE03uy9wlxfYYTwEufzGFpOcQ24W735sam1iTUy&psig=AOvVaw3v6wvpwKKh9QTJ8S7q5a5u&ust=1748450589538000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLCN_JOMxI0DFQAAAAAdAAAAABAE" alt="James Bond">
+                    <h3>James Bond</h3>
+                    <p>Action/Spy</p>
+                    <button class="btn feedback-btn">Give Feedback</button>
+                </div>
+                <div class="movie-card">
+                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn3.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcQkUywIUXDjHSQJIaNHYVs08osgBpF5Ot-xmB_omyEZeeRP9Xug&psig=AOvVaw1kysNnGUGnGpoDotd-s_HP&ust=1748450627967000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNj0uKaMxI0DFQAAAAAdAAAAABAE" alt="The Dark Knight">
+                    <h3>The Dark Knight</h3>
+                    <p>Action/Drama</p>
+                    <button class="btn feedback-btn">Give Feedback</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actors Page -->
+    <section id="actors" class="page">
+        <div class="container">
+            <h2>Our Stars</h2>
+            <div class="actor-grid">
+                <div class="actor-card" data-actor="tom">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQGkcotjOMRen0cghkXkqt3zJXUyKOp3FbcgzmqTsN2pGNbTTHzesQmuqptF3S0qFIXH7FPlXTcQVfMiCI" alt="Tom Cruise">
+                    <h3>Tom Cruise</h3>
+                    <button class="btn bio-btn">View Bio</button>
+                </div>
+                <div class="actor-card" data-actor="daniel">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1uGHij1BFV6fhBEb0dwHtAVraGMPJG_AehQ&s" alt="Daniel Craig">
+                    <h3>Daniel Craig</h3>
+                    <button class="btn bio-btn">View Bio</button>
+                </div>
+                <div class="actor-card" data-actor="christian">
+                    <img src="https://m.media-amazon.com/images/I/41R8po1o7UL._AC_UF1000,1000_QL80_.jpg" alt="Christian Bale">
+                    <h3>Christian Bale</h3>
+                    <button class="btn bio-btn">View Bio</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page">
+        <div class="container">
+            <form id="feedbackForm" class="contact-form">
+                <h2>Movie Feedback</h2>
+                <select id="movieSelect" required>
+                    <option value="">Select Movie</option>
+                    <option>Mission: Impossible</option>
+                    <option>James Bond</option>
+                    <option>The Dark Knight</option>
+                </select>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Feedback" rows="5" required></textarea>
+                <div class="rating">
+                    <span>Rating: </span>
+                    <div class="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Actor Bio Pages -->
+    <div id="bioPages">
+        <!-- Tom Cruise Bio -->
+        <div id="tomBio" class="bio-page">
+            <div class="container">
+                <div class="bio-content">
+                    <h2>Tom Cruise</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=fsQgc9pCyDU"
+                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="bio-text">
+                        <p><strong>Born:</strong> July 3, 1962 in Syracuse, New York, USA</p>
+                        <p><strong>Notable Works:</strong> Top Gun, Mission: Impossible series, Jerry Maguire</p>
+                        <p>Thomas Cruise Mapother IV is an American actor and producer. One of the world's highest-paid actors, he has received various accolades, including three Golden Globe Awards and nominations for three Academy Awards.</p>
+                    </div>
+                    <div class="bio-actions">
+                        <a href="bios/tom-cruise-bio.pdf" class="btn download-btn" download>Download Bio (PDF)</a>
+                        <button class="btn back-btn">Back to Actors</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Add similar bio sections for Daniel Craig and Christian Bale -->
+         <div id="danielBio" class="bio-page" style="display: none;">
+    <div class="container">
+        <div class="bio-content">
+            <h2>Daniel Craig</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            <div class="bio-text">
+                <p><strong>Born:</strong> March 2, 1968 in Chester, Cheshire, England</p>
+                <p><strong>Notable Works:</strong> James Bond series (Casino Royale, Skyfall, No Time to Die), Knives Out</p>
+                <p>Daniel Wroughton Craig is an English actor. He gained international fame for portraying James Bond in the Eon Productions film series, beginning with Casino Royale (2006), and concluding with No Time to Die (2021).</p>
+            </div>
+            <div class="bio-actions">
+             
+                <a href="bios/daniel-craig-bio.pdf" class="btn download-btn" download>Download Bio (PDF)</a>
+                <!-- 
+                    This button is typically used to navigate back to a list of actors.
+                    Its functionality would be handled by JavaScript.
+                -->
+                <button class="btn back-btn">Back to Actors</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
