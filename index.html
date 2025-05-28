@@ -95,15 +95,13 @@
         <div class="container">
             <form id="feedbackForm" class="contact-form">
                 <h2>Movie Feedback</h2>
-                <select id="movieSelect" required>
+                <select id="movieSelect" name="movieSelect" required>
                     <option value="">Select Movie</option>
                     <option>Mission: Impossible</option>
                     <option>James Bond</option>
                     <option>The Dark Knight</option>
                 </select>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Feedback" rows="5" required></textarea>
+    <input type="text" name="userName" placeholder="Your Name" required> <input type="email" name="userEmail" placeholder="Your Email" required> <textarea name="userFeedback" placeholder="Your Feedback" rows="5" required></textarea>
                 <div class="rating">
                     <span>Rating: </span>
                     <div class="stars">
