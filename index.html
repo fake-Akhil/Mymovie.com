@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMovie.com | Your Cinema Destination</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+    window.digitalData = {
+        page: {
+            pageInfo: {
+                // Initial values for the Home page
+                breadcrumbs: "mymovie.com:home",
+                pageShortName: "home",
+                pageName: "mymovie.com:home", // Adobe Analytics page name
+                destinationURL: window.location.href, // Dynamic: Current URL
+                isIframe: false,
+                contentIframe: false,
+                hierarchie1: "mymovie.com:home",
+                title: document.title, // Dynamic: Browser title
+                internalPageName: "home",
+                pageID: window.location.hostname + ":" + (window.location.hash || "home"), // Dynamic: hostname:hash or :home
+                tagging: "", // Can be used for specific page tags
+                server: window.location.hostname, // Dynamic: Domain name
+                urlShortcut: "",
+                pageInstanceID: "mymovie.com:home:" + Date.now(), // Dynamic: Unique ID for this page view
+                language: "en",
+                referringURL: document.referrer, // Dynamic: Previous page URL
+                sysEnv: navigator.userAgent // Dynamic: User's browser/OS
+            },
+            category: {
+                type: "mymovie:page-type:home", // Specific page type for MyMovie site
+                version: "1.0.0" // Version of your data layer implementation
+            },
+            attributes: {}, // Custom page attributes can go here
+            components: []  // Information about components on the page
+        },
+        product: [
+            {
+                productInfo: {} // Populated for product detail pages (e.g., specific movie pages)
+            }
+        ],
+        cart: {
+            productsInCart: [] // Populated for e-commerce (e.g., ticket purchase)
+        },
+        user: [
+            {
+                profile: [
+                    {
+                        profileInfo: {},
+                        attributes: {
+                            loggedIn: false // Dynamic: Update if user logs in
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+    </script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LB397MQZ22"></script>
 <script>
