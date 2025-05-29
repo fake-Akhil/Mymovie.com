@@ -5,88 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMovie.com | Your Cinema Destination</title>
     <link rel="stylesheet" href="style.css">
-<!--     <script type="text/javascript">
-    window.digitalData = {
-        page: {
-            pageInfo: {
-                // Initial values for the Home page
-                breadcrumbs: "mymovie.com:home",
-                pageShortName: "home",
-                pageName: "mymovie.com:home", // Adobe Analytics page name
-                destinationURL: window.location.href, // Dynamic: Current URL
-                isIframe: false,
-                contentIframe: false,
-                hierarchie1: "mymovie.com:home",
-                title: document.title, // Dynamic: Browser title
-                internalPageName: "home",
-                pageID: window.location.hostname + ":" + (window.location.hash || "home"), // Dynamic: hostname:hash or :home
-                tagging: "", // Can be used for specific page tags
-                server: window.location.hostname, // Dynamic: Domain name
-                urlShortcut: "",
-                pageInstanceID: "mymovie.com:home:" + Date.now(), // Dynamic: Unique ID for this page view
-                language: "en",
-                referringURL: document.referrer, // Dynamic: Previous page URL
-                sysEnv: navigator.userAgent // Dynamic: User's browser/OS
-            },
-            category: {
-                type: "mymovie:page-type:home", // Specific page type for MyMovie site
-                version: "1.0.0" // Version of your data layer implementation
-            },
-            attributes: {}, // Custom page attributes can go here
-            components: []  // Information about components on the page
-        },
-        product: [
-            {
-                productInfo: {} // Populated for product detail pages (e.g., specific movie pages)
-            }
-        ],
-        cart: {
-            productsInCart: [] // Populated for e-commerce (e.g., ticket purchase)
-        },
-        user: [
-            {
-                profile: [
-                    {
-                        profileInfo: {},
-                        attributes: {
-                            loggedIn: false // Dynamic: Update if user logs in
-                        }
-                    }
-                ]
-            }
-        ]
-    };
-    </script> -->
     <script type="text/javascript">
 window.digitalData = {
   page: {
     pageInfo: {
-      // ... existing properties
+      // These values are dynamically set based on MyMovie.com's content
+      breadcrumbs: "mymovie.com:home", // Initial breadcrumbs for the home page
+      pageShortName: "home", // Short name for the home page
+      pageName: "mymovie.com:home", // Standard page name for Adobe Analytics, for the home page
+      destinationURL: window.location.href, // Captures the current URL of the page
+      isIframe: false, // Indicates if the page is loaded within an iframe
+      contentIframe: false, // Indicates if the content itself is in an iframe
+      hierarchie1: "mymovie.com:home", // Primary hierarchy level for the home page
+      title: document.title, // Captures the title from the browser tab
+      internalPageName: "home", // Internal reference name for the home page
+      // Generates a unique page ID based on hostname and current URL hash (or 'home' if no hash)
+      pageID: window.location.hostname + ":" + (window.location.hash ? window.location.hash.substring(1) : "home"),
+      tagging: "", // Placeholder for any specific tagging metadata
+      server: window.location.hostname, // Captures the domain name of the server
+      urlShortcut: "", // Placeholder for any URL shortcuts
+      // Generates a unique instance ID for each page view using current timestamp
+      pageInstanceID: "mymovie.com:home:" + Date.now(),
+      language: "en", // Sets the page language to English
+      referringURL: document.referrer, // Captures the URL of the page that referred the user
+      sysEnv: navigator.userAgent // Captures the user's browser and operating system information
     },
     category: {
-      type: ":conf:we-retail:settings:wcm:templates:hero-page",
-      version: "2023-8-3"
+      // Defines the type and version of the page, specific to MyMovie.com
+      type: "mymovie:page-type:home", // Categorizes the page as a home page for MyMovie
+      version: "1.0.0" // Version of this specific page type's data layer structure
     },
     attributes: {
-      country: "US" // <-- Define country here
+      // Custom attributes related to the page. Here, the country is defined.
+      country: "IN" // Set to "IN" (India) based on your current location context.
+                   // You can make this dynamic if your website serves multiple countries.
     },
-    components: []
+    components: [] // Placeholder for data related to components on the page
   },
   product: [
     {
+      // Placeholder for product-specific information (e.g., details of a movie on its dedicated page)
       productInfo: {}
     }
   ],
   cart: {
+    // Placeholder for shopping cart information (e.g., movie ticket selections)
     productsInCart: []
   },
   user: [
     {
       profile: [
         {
-          profileInfo: {},
+          profileInfo: {}, // Placeholder for user profile details
           attributes: {
-            loggedIn: false
+            loggedIn: false // Indicates user's login status (can be updated dynamically)
           }
         }
       ]
