@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMovie.com | Your Cinema Destination</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
     window.digitalData = {
         page: {
             pageInfo: {
@@ -56,7 +56,44 @@
             }
         ]
     };
-    </script>
+    </script> -->
+    <script type="text/javascript">
+window.digitalData = {
+  page: {
+    pageInfo: {
+      // ... existing properties
+    },
+    category: {
+      type: ":conf:we-retail:settings:wcm:templates:hero-page",
+      version: "2023-8-3"
+    },
+    attributes: {
+      country: "US" // <-- Define country here
+    },
+    components: []
+  },
+  product: [
+    {
+      productInfo: {}
+    }
+  ],
+  cart: {
+    productsInCart: []
+  },
+  user: [
+    {
+      profile: [
+        {
+          profileInfo: {},
+          attributes: {
+            loggedIn: false
+          }
+        }
+      ]
+    }
+  ]
+};
+</script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LB397MQZ22"></script>
 <script>
