@@ -60,26 +60,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Feedback Form
     document.getElementById('feedbackForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const feedback = {
-            movie: formData.get('movieSelect'),
-            name: formData.get('name'),
-            email: formData.get('email'),
-            feedback: formData.get('feedback'),
-            rating: document.querySelector('.star.active')?.dataset.value || '0'
-        };
-       
-        // Here you would typically send the feedback to a server
-        console.log('Feedback submitted:', feedback);
-        alert('Thank you for your feedback!');
-        e.target.reset();
-       
-        // Reset stars
-        document.querySelectorAll('.star').forEach(star => {
-            star.classList.remove('active');
-        });
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const feedback = {
+        movie: formData.get('movieSelect'),
+        name: formData.get('userName'), // Corrected to match input name
+        email: formData.get('userEmail'), // Corrected to match input name
+        feedbackText: formData.get('userFeedback'), // Changed key for clarity
+        rating: document.querySelector('.star.active')?.dataset.value || '0'
+    };
+
+    // --- Tealium Data Layer Population ---
+    window.utag_data.event_name = "movie_feedback_submit"; // Custom event name
+    window.utag_data.movie_selected = feedback.movie;
+    window.utag_data.feedback_rating = feedback.rating;
+    window.utag_data.user_name = feedback.name;
+    window.utag_data.user_email = feedback.email;
+    window.utag_data.feedback_text = feedback.feedbackText; // New variable for feedback content
+
+    // You can also map to Adobe Analytics variables directly if needed
+    window.utag_data.adobe_evar1 = feedback.movie; // Example: map movie name to eVar1
+    window.utag_data.adobe_prop1 = feedback.rating; // Example: map rating to prop1
+    // --- End Tealium Data Layer Population ---
+
+    // Here you would typically send the feedback to a server
+    console.log('Feedback submitted:', feedback);
+    alert('Thank you for your feedback!');
+    e.target.reset();
+
+    // Reset stars
+    document.querySelectorAll('.star').forEach(star => {
+        star.classList.remove('active');
     });
+
+    // --- Fire the Tealium Event ---
+    // Use utag.link() for event tracking, utag.view() for page views
+    utag.link(window.utag_data);
+});
 
     // Feedback Buttons on Movies
     document.querySelectorAll('.feedback-btn').forEach(btn => {
