@@ -72,26 +72,57 @@ window.digitalData = {
     }
   ]
 };
-</script>
-    <!-- The utag.sync.js script should run as early as possible, preferably
- in the head of the document. See the Sample HTML for more information -->
-<script src="https://tags.tiqcdn.com/utag/cognizant-sandbox/main/prod/utag.sync.js"></script>
-
 <script type="text/javascript">
-var utag_data = {
-}
-</script>
+        // Initialize utag_data for Tealium
+        var utag_data = utag_data || {}; // Ensure utag_data exists
 
-<!-- Loading script asynchronously -->
-<script type="text/javascript">
-    (function(a,b,c,d){
-    a='https://tags.tiqcdn.com/utag/cognizant-sandbox/mymovie.com/prod/utag.js';
-    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-    })();
-</script>
+        // Set initial page view data for the Home page
+        utag_data.page_type = "homepage";
+        utag_data.page_name = "mymovie.com:home";
+        utag_data.page_title = document.title;
+        utag_data.page_url = window.location.href;
+        utag_data.page_referrer = document.referrer;
+        utag_data.page_language = "en";
+        utag_data.site_country = "IN"; // Static for India, make dynamic if needed
 
-    
+        // Initialize digitalData (if still needed for Adobe Launch direct mapping via Tealium)
+        // Keep your existing digitalData structure as you had it.
+        window.digitalData = {
+            page: {
+                pageInfo: {
+                    breadcrumbs: "mymovie.com:home",
+                    pageShortName: "home",
+                    pageName: "mymovie.com:home",
+                    destinationURL: window.location.href,
+                    title: document.title,
+                    language: "en",
+                    referringURL: document.referrer,
+                    sysEnv: navigator.userAgent
+                },
+                category: {
+                    type: "mymovie:page-type:home",
+                    version: "1.0.0"
+                },
+                attributes: {
+                    country: "IN"
+                },
+                components: []
+            },
+            product: [{ productInfo: {} }],
+            cart: { productsInCart: [] },
+            user: [{ profile: [{ profileInfo: {}, attributes: { loggedIn: false } }] }]
+        };
+    </script>
+
+    <script src="https://tags.tiqcdn.com/utag/cognizant-sandbox/main/prod/utag.sync.js"></script>
+
+    <script type="text/javascript">
+        (function(a,b,c,d){
+        a='https://tags.tiqcdn.com/utag/cognizant-sandbox/mymovie.com/prod/utag.js';
+        b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+        a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+        })();
+    </script>
 
     
     <!-- Google tag (gtag.js) -->
